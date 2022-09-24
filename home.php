@@ -3,6 +3,9 @@
 
     $user_id = $_SESSION['user_id'];
     $user = $getFromU->userData($user_id);
+	if($getFromU->loggedIn() === false){
+		header('Location: index.php');
+	}
 
 
 ?>
@@ -27,7 +30,7 @@
 		
 		<div class="nav-left">
 			<ul>
-				<li><a href="#"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+				<li><a href="<?php echo BASE_URL; ?>home.php"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
 				<li><a href="i/notifications"><i class="fa fa-bell" aria-hidden="true"></i>Notification</a></li>
 				<li><i class="fa fa-envelope" aria-hidden="true"></i>Messages</li>
 			</ul>
@@ -86,7 +89,7 @@
 					<div class="info-body-name">
 						<div class="in-b-name">
 							<div><a href="<?php echo $user->username;?>"><?php echo $user->screenName;?></a></div>
-							<span><small><a href="PROFILE-LINK">@<?php echo $user->username;?></a></small></span>
+							<span><small><a href="<?php echo $user->username; ?>">@<?php echo $user->username; ?></a></small></span>
 						</div><!-- in b name end-->
 					</div><!-- info body name end-->
 				</div><!-- info in body end-->

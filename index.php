@@ -1,11 +1,10 @@
 <?php 
     include 'core/init.php';
+	if(isset($_SESSION['user_id'])){
+		header('Location: home.php');
+	}
 
 ?>
-<!--
-   This template created by Meralesson.com 
-   This template only use for educational purpose 
--->
 <html>
 	<head>
 		<title>twitter</title>
@@ -16,7 +15,7 @@
 	<!--Helvetica Neue-->
 <body>
 <div class="front-img">
-	<img src="assets/images/background.jpg"></img>
+	<img src="assets/images/background2.jpg"></img>
 </div>	
 
 <div class="wrapper">
@@ -66,7 +65,7 @@
 
 			<!-- SignUp Section -->
 			<div class="signup-wrapper">
-			   <?php include 'includes/signup.php'?>
+			   <?php include 'includes/signup-form.php'?>
 			</div>
 			<!-- SIGN UP wrapper end -->
 
